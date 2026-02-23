@@ -142,7 +142,30 @@ class MainPage extends StatelessWidget {
                 ),
                 Directionality(
                   textDirection: TextDirection.ltr,
-                  child: IconButton(onPressed: () {}, icon: Icon(Icons.sort)),
+                  child: PopupMenuButton(
+                    position: PopupMenuPosition.under,
+                    color: Colors.deepOrangeAccent,
+                    icon: Icon(Icons.sort),
+                    itemBuilder: (context) {
+                      return [
+                        PopupMenuItem(
+                          child: Text(
+                            'جدیدترین ها',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: Divider(color: Colors.black, thickness: 2),
+                        ),
+                        PopupMenuItem(
+                          child: Text(
+                            'قدیمی ترین ها',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ];
+                    },
+                  ),
                 ),
               ],
             ),

@@ -126,7 +126,19 @@ class MainPage extends StatelessWidget {
                 Spacer(),
 
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                      backgroundColor: Colors.redAccent,
+
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          width: double.infinity,
+                          child: filter(),
+                        );
+                      },
+                    );
+                  },
                   icon: Icon(Icons.filter_alt_outlined),
                 ),
                 Directionality(
@@ -139,5 +151,14 @@ class MainPage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class filter extends StatelessWidget {
+  const filter({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [Text("hello world")]);
   }
 }

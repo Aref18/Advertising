@@ -26,6 +26,21 @@ class _AdvertisingState extends State<Advertising> {
       ],
       supportedLocales: [Locale("fa")],
       home: Scaffold(
+        drawer: SafeArea(
+          child: Drawer(
+            backgroundColor: Colors.redAccent,
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                Icon(Icons.add_sharp, size: 80),
+                Text(
+                  "با ما تبلیغات خود را گسترده کنید",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
         backgroundColor: Colors.black,
         bottomNavigationBar: SafeArea(
           child: Container(
@@ -52,7 +67,7 @@ class _AdvertisingState extends State<Advertising> {
                   backgroundColor: Colors.black,
                   type: BottomNavigationBarType.fixed,
                   selectedItemColor: Colors.red,
-                  unselectedItemColor: Colors.blue,
+                  unselectedItemColor: Colors.white,
                   items: const [
                     BottomNavigationBarItem(
                       label: "صفحه اصلی",
@@ -98,7 +113,12 @@ class MainPage extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(width: 10),
-                IconButton(onPressed: () {}, icon: Icon(Icons.menu, size: 30)),
+                IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: Icon(Icons.menu, size: 30),
+                ),
                 Text(
                   "اگهی ها",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),

@@ -129,12 +129,11 @@ class MainPage extends StatelessWidget {
                   onPressed: () {
                     showModalBottomSheet(
                       backgroundColor: Colors.redAccent,
-
                       context: context,
                       builder: (context) {
                         return Container(
                           width: double.infinity,
-                          child: filter(),
+                          child: Filter(),
                         );
                       },
                     );
@@ -154,11 +153,47 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class filter extends StatelessWidget {
-  const filter({super.key});
+class Filter extends StatelessWidget {
+  const Filter({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Text("hello world")]);
+    List<String> jobs = [
+      "توسعه دهنده بک اند",
+      "توسعه دهنده فرانت",
+      "توسعه دهنده آندروید",
+      "وردپرس",
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "عنوان شغلی خود را انتخاب کنید",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          Column(
+            children: List.generate(jobs.length, (index) {
+              return Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    border: BoxBorder.all(color: Colors.black, width: 3),
+                  ),
+                  width: double.infinity,
+                  child: Center(
+                    child: Text(jobs[index], style: TextStyle(fontSize: 20)),
+                  ),
+                ),
+              );
+            }),
+          ),
+        ],
+      ),
+    );
   }
 }

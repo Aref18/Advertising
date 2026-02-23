@@ -45,7 +45,7 @@ class _AdvertisingState extends State<Advertising> {
         bottomNavigationBar: SafeArea(
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.white),
+              border: Border.all(color: Colors.redAccent),
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
@@ -167,19 +167,20 @@ class Filter extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "عنوان شغلی خود را انتخاب کنید",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 10),
-          Column(
-            children: List.generate(jobs.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "عنوان شغلی خود را انتخاب کنید",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Column(
+              children: List.generate(jobs.length, (index) {
+                return Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     border: BoxBorder.all(color: Colors.black, width: 3),
@@ -188,11 +189,11 @@ class Filter extends StatelessWidget {
                   child: Center(
                     child: Text(jobs[index], style: TextStyle(fontSize: 20)),
                   ),
-                ),
-              );
-            }),
-          ),
-        ],
+                );
+              }),
+            ),
+          ],
+        ),
       ),
     );
   }

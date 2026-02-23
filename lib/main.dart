@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
-  runApp(locali());
+  runApp(Advertising());
 }
 
-class locali extends StatefulWidget {
-  const locali({super.key});
+class Advertising extends StatefulWidget {
+  const Advertising({super.key});
 
   @override
-  State<locali> createState() => _localiState();
+  State<Advertising> createState() => _AdvertisingState();
 }
 
-class _localiState extends State<locali> {
+class _AdvertisingState extends State<Advertising> {
   int currectindex = 0;
 
   @override

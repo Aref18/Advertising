@@ -97,9 +97,17 @@ class _AdvertisingState extends State<Advertising> {
 }
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+  MainPage({super.key});
 
   @override
+  List<ADS> ads = [
+    ADS(
+      title: "استخدام برنامه نویس فلاتر",
+      abilities: "تسلط به دارت و فلاتر و استیت منیجمنت ها",
+      isconditional: true,
+      salary: "توافقی",
+    ),
+  ];
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
@@ -170,145 +178,162 @@ class MainPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 30),
-          SizedBox(
-            height: 210,
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.only(left: 12),
-                    width: double.infinity,
-                    height: 180,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      border: BoxBorder.all(color: Colors.red, width: 3),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                            width: 70,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "حضوری",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
+          Expanded(
+            child: ListView.builder(
+              itemCount: ads.length,
+              shrinkWrap: true,
+
+              itemBuilder: (context, index) {
+                return SizedBox(
+                  height: 210,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.only(left: 12),
+                          width: double.infinity,
+                          height: 180,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            border: BoxBorder.all(color: Colors.red, width: 3),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  width: 70,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      ads[index].isconditional
+                                          ? "حضوری"
+                                          : "ریموت",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "مهارت ها :  ",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    ads[index].abilities,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "حقوق پیشنهادی :  ",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    ads[index].salary!,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.amberAccent,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Icon(Icons.delete),
+                              ),
+                            ],
                           ),
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              "مهارت ها :  ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              "تسلط به دارت و فلاتر و استیت منیجمنت ها",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "حقوق پیشنهادی :  ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              "توافقی",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 20),
-                        Container(
-                          width: 40,
-                          height: 40,
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          margin: EdgeInsets.only(right: 30),
+                          padding: EdgeInsets.only(left: 15, right: 15),
+                          height: 35,
                           decoration: BoxDecoration(
-                            color: Colors.amberAccent,
-                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.red,
+                            border: BoxBorder.all(
+                              color: Colors.black,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(25),
                           ),
-                          child: Icon(Icons.delete),
+                          child: Text(
+                            "برنامه نویس فلاتر",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            ),
+                          ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    margin: EdgeInsets.only(right: 30),
-                    padding: EdgeInsets.only(left: 15, right: 15),
-                    height: 35,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      border: BoxBorder.all(color: Colors.black, width: 3),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Text(
-                      "برنامه نویس فلاتر",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
                       ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    margin: EdgeInsets.only(right: 30),
-                    padding: EdgeInsets.only(left: 15, right: 15),
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      border: BoxBorder.all(color: Colors.deepOrange, width: 5),
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Container(
+                          margin: EdgeInsets.only(right: 30),
+                          padding: EdgeInsets.only(left: 15, right: 15),
+                          height: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            border: BoxBorder.all(
+                              color: Colors.deepOrange,
+                              width: 5,
+                            ),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
+                            ),
+                          ),
+                          child: Text(
+                            "مشاهده",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "مشاهده",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ),
-                    ),
+                    ],
                   ),
-                ),
-              ],
+                );
+              },
             ),
           ),
         ],
@@ -361,4 +386,17 @@ class Filter extends StatelessWidget {
       ),
     );
   }
+}
+
+class ADS {
+  String title;
+  String abilities;
+  bool isconditional;
+  String? salary;
+  ADS({
+    required this.title,
+    required this.abilities,
+    required this.isconditional,
+    required this.salary,
+  });
 }

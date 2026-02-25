@@ -100,15 +100,15 @@ class MainPage extends StatelessWidget {
   MainPage({super.key});
 
   @override
-  List<ADS> ads = [
-    ADS(
-      title: "استخدام برنامه نویس فلاتر",
-      abilities: "تسلط به دارت و فلاتر و استیت منیجمنت ها",
-      isconditional: true,
-      salary: "توافقی",
-    ),
-  ];
   Widget build(BuildContext context) {
+    List<ADS> ads = [
+      ADS(
+        title: "استخدام برنامه نویس فلاتر",
+        abilities: "تسلط به دارت و فلاتر و استیت منیجمنت ها",
+        isconditional: true,
+        salary: "توافقی",
+      ),
+    ];
     return SafeArea(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

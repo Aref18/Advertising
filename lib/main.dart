@@ -56,37 +56,36 @@ class _AdvertisingState extends State<Advertising> {
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
               ),
-              child: Container(
-                child: BottomNavigationBar(
-                  currentIndex: currectindex,
-                  onTap: (value) {
-                    setState(() {
-                      currectindex = value;
-                    });
-                  },
-                  backgroundColor: Colors.black,
-                  type: BottomNavigationBarType.fixed,
-                  selectedItemColor: Colors.red,
-                  unselectedItemColor: Colors.white,
-                  items: const [
-                    BottomNavigationBarItem(
-                      label: "صفحه اصلی",
-                      icon: Icon(Icons.home_work),
-                    ),
-                    BottomNavigationBarItem(
-                      label: "درخواست ها",
-                      icon: Icon(Icons.request_page),
-                    ),
-                    BottomNavigationBarItem(
-                      label: "حساب کاربری",
-                      icon: Icon(Icons.person),
-                    ),
-                    BottomNavigationBarItem(
-                      label: "خروج از حساب",
-                      icon: Icon(Icons.logout),
-                    ),
-                  ],
-                ),
+              child: BottomNavigationBar(
+                currentIndex: currectindex,
+
+                onTap: (value) {
+                  setState(() {
+                    currectindex = value;
+                  });
+                },
+                backgroundColor: Colors.black,
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor: Colors.red,
+                unselectedItemColor: Colors.white,
+                items: const [
+                  BottomNavigationBarItem(
+                    label: "صفحه اصلی",
+                    icon: Icon(Icons.home_work),
+                  ),
+                  BottomNavigationBarItem(
+                    label: "درخواست ها",
+                    icon: Icon(Icons.request_page),
+                  ),
+                  BottomNavigationBarItem(
+                    label: "حساب کاربری",
+                    icon: Icon(Icons.person),
+                  ),
+                  BottomNavigationBarItem(
+                    label: "خروج از حساب",
+                    icon: Icon(Icons.logout),
+                  ),
+                ],
               ),
             ),
           ),
@@ -131,7 +130,7 @@ class MainPage extends StatelessWidget {
                       backgroundColor: Colors.redAccent,
                       context: context,
                       builder: (context) {
-                        return Container(
+                        return SizedBox(
                           width: double.infinity,
                           child: Filter(),
                         );
@@ -168,6 +167,78 @@ class MainPage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+          SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              height: 130,
+              color: Colors.white,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      margin: EdgeInsets.only(left: 12),
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        border: BoxBorder.all(color: Colors.red, width: 3),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+
+                    child: Container(
+                      margin: EdgeInsets.only(right: 30),
+                      padding: EdgeInsets.only(left: 15, right: 15),
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        border: BoxBorder.all(color: Colors.black, width: 3),
+
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Text(
+                        "برنامه نویس فلاتر",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Container(
+                      margin: EdgeInsets.only(right: 30),
+                      padding: EdgeInsets.only(left: 15, right: 15),
+
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        border: BoxBorder.all(
+                          color: Colors.deepOrange,
+                          width: 5,
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Text(
+                        "مشاهده",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

@@ -170,100 +170,145 @@ class MainPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SizedBox(
-              height: 130,
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(left: 12),
-                      width: double.infinity,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: BoxBorder.all(color: Colors.red, width: 3),
-                      ),
-                      child: Column(
-                        children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              width: 70,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: Colors.orange,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "حضوری",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17,
-                                  ),
+          SizedBox(
+            height: 210,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(left: 12),
+                    width: double.infinity,
+                    height: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: BoxBorder.all(color: Colors.red, width: 3),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            width: 70,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "حضوری",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17,
                                 ),
                               ),
                             ),
                           ),
-                        ],
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "مهارت ها :  ",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              "تسلط به دارت و فلاتر و استیت منیجمنت ها",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "حقوق پیشنهادی :  ",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              "توافقی",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.amberAccent,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Icon(Icons.delete),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    margin: EdgeInsets.only(right: 30),
+                    padding: EdgeInsets.only(left: 15, right: 15),
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      border: BoxBorder.all(color: Colors.black, width: 3),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Text(
+                      "برنامه نویس فلاتر",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      margin: EdgeInsets.only(right: 30),
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      height: 35,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        border: BoxBorder.all(color: Colors.black, width: 3),
-                        borderRadius: BorderRadius.circular(25),
+                ),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Container(
+                    margin: EdgeInsets.only(right: 30),
+                    padding: EdgeInsets.only(left: 15, right: 15),
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      border: BoxBorder.all(color: Colors.deepOrange, width: 5),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
                       ),
-                      child: Text(
-                        "برنامه نویس فلاتر",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                        ),
+                    ),
+                    child: Text(
+                      "مشاهده",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Container(
-                      margin: EdgeInsets.only(right: 30),
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      height: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        border: BoxBorder.all(
-                          color: Colors.deepOrange,
-                          width: 5,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
-                      ),
-                      child: Text(
-                        "مشاهده",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

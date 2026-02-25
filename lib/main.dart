@@ -172,14 +172,14 @@ class MainPage extends StatelessWidget {
           SizedBox(height: 30),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Container(
+            child: SizedBox(
               height: 130,
-              color: Colors.white,
               child: Stack(
                 children: [
                   Align(
                     alignment: Alignment.center,
                     child: Container(
+                      padding: EdgeInsets.all(10),
                       margin: EdgeInsets.only(left: 12),
                       width: double.infinity,
                       height: 100,
@@ -187,11 +187,22 @@ class MainPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                         border: BoxBorder.all(color: Colors.red, width: 3),
                       ),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Container(
+                              height: 30,
+                              decoration: BoxDecoration(color: Colors.blue),
+                              child: Text("حضوری"),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Align(
                     alignment: Alignment.topRight,
-
                     child: Container(
                       margin: EdgeInsets.only(right: 30),
                       padding: EdgeInsets.only(left: 15, right: 15),
@@ -199,7 +210,6 @@ class MainPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.red,
                         border: BoxBorder.all(color: Colors.black, width: 3),
-
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Text(
@@ -217,7 +227,6 @@ class MainPage extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.only(right: 30),
                       padding: EdgeInsets.only(left: 15, right: 15),
-
                       height: 30,
                       decoration: BoxDecoration(
                         color: Colors.black,
@@ -225,7 +234,10 @@ class MainPage extends StatelessWidget {
                           color: Colors.deepOrange,
                           width: 5,
                         ),
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
                       ),
                       child: Text(
                         "مشاهده",

@@ -192,9 +192,22 @@ class MainPage extends StatelessWidget {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Container(
+                              width: 70,
                               height: 30,
-                              decoration: BoxDecoration(color: Colors.blue),
-                              child: Text("حضوری"),
+                              decoration: BoxDecoration(
+                                color: Colors.orange,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "حضوری",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],

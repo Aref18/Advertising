@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/details_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -342,12 +343,24 @@ class MainPage extends StatelessWidget {
                               topRight: Radius.circular(20),
                             ),
                           ),
-                          child: Text(
-                            "مشاهده",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return DetailsPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "مشاهده",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              ),
                             ),
                           ),
                         ),

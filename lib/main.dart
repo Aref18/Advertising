@@ -97,7 +97,7 @@ class _AdvertisingState extends State<Advertising> {
 }
 
 class MainPage extends StatelessWidget {
-  MainPage({super.key});
+  const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -107,6 +107,30 @@ class MainPage extends StatelessWidget {
         abilities: "تسلط به دارت و فلاتر و استیت منیجمنت ها",
         isconditional: true,
         salary: "توافقی",
+      ),
+      ADS(
+        title: "استخدام برنامه نویس فرانت",
+        abilities: "تسلط به (html , css ,js)",
+        isconditional: false,
+        salary: "بین 20 تا 30 میلیون ",
+      ),
+      ADS(
+        title: "استخدام برنامه نویس backEnd",
+        abilities: "تسلط بر یکی از فریمورک های جنگو یا Node,js",
+        isconditional: true && true,
+        salary: "توافقی",
+      ),
+      ADS(
+        title: "استخدام وردپرس",
+        abilities: "تسلط و تجربه کار با وردپرس و اشنایی با php(laravel)",
+        isconditional: true,
+        salary: "توافقی",
+      ),
+      ADS(
+        title: "استخدام برنامه نویس اندروید",
+        abilities: "تسلط به کاتلین و jetpack compose",
+        isconditional: true,
+        salary: "55 میلیون ",
       ),
     ];
     return SafeArea(
@@ -182,19 +206,16 @@ class MainPage extends StatelessWidget {
             child: ListView.builder(
               itemCount: ads.length,
               shrinkWrap: true,
-
               itemBuilder: (context, index) {
                 return SizedBox(
-                  height: 210,
+                  height: 230,
                   child: Stack(
                     children: [
                       Align(
                         alignment: Alignment.center,
                         child: Container(
-                          padding: EdgeInsets.all(10),
-                          margin: EdgeInsets.only(left: 12),
                           width: double.infinity,
-                          height: 180,
+                          height: 200,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
                             border: BoxBorder.all(color: Colors.red, width: 3),
@@ -225,25 +246,26 @@ class MainPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "مهارت ها :  ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                              RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "مهارت ها : ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    ads[index].abilities,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w300,
+                                    TextSpan(
+                                      text: ads[index].abilities,
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               Row(
                                 children: [
@@ -294,7 +316,7 @@ class MainPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(25),
                           ),
                           child: Text(
-                            "برنامه نویس فلاتر",
+                            ads[index].title,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

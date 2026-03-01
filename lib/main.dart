@@ -59,10 +59,9 @@ class _AdvertisingState extends State<Advertising> {
               ),
               child: BottomNavigationBar(
                 currentIndex: currectindex,
-
-                onTap: (value) {
+                onTap: (index) {
                   setState(() {
-                    currectindex = value;
+                    currectindex = index;
                   });
                 },
                 backgroundColor: Colors.black,
@@ -91,7 +90,10 @@ class _AdvertisingState extends State<Advertising> {
             ),
           ),
         ),
-        body: IndexedStack(children: [MainPage()]),
+        body: IndexedStack(
+          index: currectindex,
+          children: [MainPage(), requests(), ProfilePage(), LogoutPage()],
+        ),
       ),
     );
   }
@@ -434,4 +436,31 @@ class ADS {
     required this.isconditional,
     required this.salary,
   });
+}
+
+class requests extends StatelessWidget {
+  const requests({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class LogoutPage extends StatelessWidget {
+  const LogoutPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
 }

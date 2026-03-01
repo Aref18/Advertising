@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({super.key});
+  const DetailsPage({super.key, required this.title});
+
+  final title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,14 @@ class DetailsPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("title"),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     IconButton(
                       onPressed: () {
                         Navigator.pop(context);
@@ -68,7 +77,19 @@ class DetailsPage extends StatelessWidget {
                     Spacer(),
                     Center(
                       child: MaterialButton(
-                        child: Text("ثبت درخواست"),
+                        minWidth: double.infinity,
+                        height: 60,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
+                        ),
+                        child: Text(
+                          "ثبت درخواست",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                         color: Colors.red,
                         onPressed: () {},
                       ),

@@ -349,7 +349,7 @@ class MainPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return DetailsPage();
+                                    return DetailsPage(title: ads[index].title);
                                   },
                                 ),
                               );

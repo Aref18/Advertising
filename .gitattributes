@@ -1,0 +1,13 @@
+windows/** linguist-generated=true
+linux/** linguist-generated=true
+macos/** linguist-generated=true
+ios/** linguist-generated=true
+android/** linguist-generated=true
+build/** linguist-generated=true
+
+# Force Dart as main language
+*.dart linguist-detectable=true
+*.cpp linguist-detectable=false
+*.cc linguist-detectable=false
+*.c linguist-detectable=false
+*.h linguist-detectable=false
